@@ -9,6 +9,7 @@ import { Todo } from 'src/app/Todo';
 export class TodoItemComponent implements OnInit {
  @Input() todo!: Todo;
  @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+ @Output() todoMarkDone: EventEmitter<Todo> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -17,5 +18,8 @@ export class TodoItemComponent implements OnInit {
     this.todoDelete.emit(todo);
     console.log("onClick has been triggred.")
   }
-
+  
+  onMarkedDone(todo : Todo){
+    this.todoMarkDone.emit(todo)
+  }
 }

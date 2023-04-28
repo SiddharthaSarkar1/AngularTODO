@@ -36,5 +36,11 @@ export class TodosComponent implements OnInit {
     localStorage.setItem("todos", JSON.stringify(this.todos));//saving this to the local storage
   }
 
+  todoMarkasDone(todo:Todo){
+    console.log(todo);
+    const index = this.todos.indexOf(todo);
+    this.todos[index].active = false;
+    localStorage.setItem("todos", JSON.stringify(this.todos));//saving this to the local storage
+  }
 
 }
