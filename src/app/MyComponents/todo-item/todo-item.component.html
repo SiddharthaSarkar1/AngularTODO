@@ -2,6 +2,6 @@
     <h5 [ngClass]="{'strike': !todo.active}">{{todo.title}}</h5>
     <p>{{todo.desc}}</p>
     <button class="btn btn-danger btn-sm" (click)="onClick(todo)">Delete</button>
-    <button class="m-3 btn btn-warning btn-sm" (click)="onMarkedDone(todo)">Mark as done</button>
+    <button *ngIf="todo.active" class="m-3 btn btn-warning btn-sm" (click)="onMarkedDone(todo)">Mark as done</button>
 </div>
 <br>
